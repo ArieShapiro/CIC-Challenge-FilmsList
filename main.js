@@ -1,10 +1,20 @@
 'use strict';
 
+
+
+
 (function () {
     // Load videos and render them on screen
     loadFilmList()
 
+
+
+
+
+
 })();
+
+
 
 
 
@@ -16,16 +26,16 @@ function renderFilmList(data) {
     var strHTML = ``;
     data.forEach(film => {
         strHTML += `
-            <li>
+            <li class="lazy">
                 <h3>${film.title}</h3>
                 <p>${film.release_year}</p>
-                <p>${film.production_company}</p>
+                <p>${film.director}</p>
+                <h6>More info...</h6>
             </li>                   
         `;
     });
     document.querySelector('.films-list').innerHTML = strHTML;
 }
-
 
 
 function loadFilmList() {
@@ -57,16 +67,7 @@ function loadFilteredFilmList(value) {
         var searchValue = res.data.filter(film => {
             return film.title.match(regex);
         });
-         renderFilmList(searchValue);
+        renderFilmList(searchValue);
     }).catch();
 
-
-
-
-
-
-
-
-
-    // console.log(filmList[0])
 }
