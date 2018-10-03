@@ -6,42 +6,46 @@
     loadFilmList()
 })();
 
-// {
-//     "actor_1": "Siddarth",
-//     "actor_2": "Nithya Menon",
-//     "actor_3": "Priya Anand",
-//     "director": "Jayendra",
-//     "locations": "Epic Roasthouse (399 Embarcadero)",
-//     "production_company": "SPI Cinemas",
-//     "release_year": "2011",
-//     "title": "180",
-//     "writer": "Umarji Anuradha, Jayendra, Aarthi Sriram, & Suba "
-//     }
-
 //filmService.js
 
 function renderFilmList(data) {
     var strHTML = ``;
+    var orderNum = 1;
     data.forEach(film => {
         strHTML += `
-            <li class="lazy tooltip">
-                <i class="fas fa-film"></i>
+            <li class="animated fadeIn delay-2s">
+                <i class="fas fa-film"></i><span>#${orderNum}</span>
                 <p><b>Title: </b>${film.title}</p>
                 <p><b>Year: </b>${film.release_year}</p>
                 <p><b>Producer: </b>${film.director}</p>
-                <h6>Additional Info..
-                    <div class="tooltiptext">
-                        <p><b>Location:</b> ${film.locations}</p>
-                        <p><b>Actors: </b>${film.actor_1}, ${film.actor_2}, ${film.actor_3}</p>
-                        <p><b>Writer: </b>${film.writer}</p>
-                        <p><b>Production Company: </b>${film.production_company}</p>                    
-                    </div>
-                </h6>
-                <i class="fas fa-hand-point-up"></i>
+                <button 
+                 onclick="showMoreInfo('${film.locations}', '${film.actor_1}', '${film.actor_2}', '${film.actor_3}', '${film.writer}', '${film.production_company}')">
+                 <i class="fas fa-hand-point-right"></i>
+                 More Info</button>
             </li>                   
         `;
+        orderNum++;
     });
     document.querySelector('.films-list').innerHTML = strHTML;
+}
+
+function showMoreInfo(location, actor1, actor2, actor3, writer, company) {
+    swal({
+        title: "More Info:",
+        text: `
+             Location:
+             ${location}
+
+             Actors:
+             ${actor1}, ${actor2}, ${actor3}
+
+             Writer:
+             ${writer}
+
+             Production Company:
+             ${company}
+        `,
+    });
 }
 
 
@@ -60,10 +64,7 @@ function onVideoSearch(ev) {
 
     loadFilteredFilmList(searchValue);
 
-    // renderFilmList(data);
 }
-
-
 
 
 function loadFilteredFilmList(value) {
