@@ -1,18 +1,70 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  text-align: center;
+  font-family: Nunito;
+  background-color: #fafafa;
+  margin: 0;
+}
+
+header {
+  background-color: #d6d3d3;
+  margin-bottom: 5%;
+  height: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+h1 {
+  font-family: "Dancing Script", cursive;
+  color: rgb(209, 199, 199);
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 2.9em;
+  margin: 0;
+}
+
+.fa,
+.fas {
+  font-weight: 900;
+  margin-right: 3%;
+}
+
 .films-list li {
   padding: 20px;
+  width: 310px;
+  margin: 4% auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
 }
+
+.fa-film {
+  font-size: 1.6em;
+}
+
 .search {
-  border: 1px solid gray;
   padding: 10px;
   background-color: white;
   max-width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.fa-search {
+  color: #827777;
+}
+
+.search:hover {
+  border: 1px solid #7097e0;
+  margin: -1px auto;
+}
+
 .search input {
   border: none;
   padding: 0 5px;
@@ -21,6 +73,61 @@ ul {
   color: black;
 }
 
-*:focus {
+input:focus {
   outline: none;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 396px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: -7%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltiptext p {
+    text-align: left;
+    padding-left: 2%
+}
+
+.tooltiptext b {
+    font-size: 1.5em;
+}
+
+.tooltip h6:hover{
+  cursor: pointer;
+}
+
+.tooltip h6:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip h6:hover + .fa-hand-point-up {
+  visibility: hidden;
+}
+
+.fa-hand-point-up {
+  position: relative;
+  bottom: 26px;
 }

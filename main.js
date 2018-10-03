@@ -1,24 +1,22 @@
 'use strict';
 
 
-
-
 (function () {
     // Load videos and render them on screen
     loadFilmList()
-
-
-
-
-
-
 })();
 
-
-
-
-
-
+// {
+//     "actor_1": "Siddarth",
+//     "actor_2": "Nithya Menon",
+//     "actor_3": "Priya Anand",
+//     "director": "Jayendra",
+//     "locations": "Epic Roasthouse (399 Embarcadero)",
+//     "production_company": "SPI Cinemas",
+//     "release_year": "2011",
+//     "title": "180",
+//     "writer": "Umarji Anuradha, Jayendra, Aarthi Sriram, & Suba "
+//     }
 
 //filmService.js
 
@@ -26,11 +24,20 @@ function renderFilmList(data) {
     var strHTML = ``;
     data.forEach(film => {
         strHTML += `
-            <li class="lazy">
-                <h3>${film.title}</h3>
-                <p>${film.release_year}</p>
-                <p>${film.director}</p>
-                <h6>More info...</h6>
+            <li class="lazy tooltip">
+                <i class="fas fa-film"></i>
+                <p><b>Title: </b>${film.title}</p>
+                <p><b>Year: </b>${film.release_year}</p>
+                <p><b>Producer: </b>${film.director}</p>
+                <h6>Additional Info..
+                    <div class="tooltiptext">
+                        <p><b>Location:</b> ${film.locations}</p>
+                        <p><b>Actors: </b>${film.actor_1}, ${film.actor_2}, ${film.actor_3}</p>
+                        <p><b>Writer: </b>${film.writer}</p>
+                        <p><b>Production Company: </b>${film.production_company}</p>                    
+                    </div>
+                </h6>
+                <i class="fas fa-hand-point-up"></i>
             </li>                   
         `;
     });
