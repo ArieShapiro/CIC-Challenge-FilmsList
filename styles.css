@@ -236,6 +236,9 @@ input:focus {
   .main-right {
     display: none;
   }
+  .swal-button{
+      right: 160px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -246,11 +249,8 @@ input:focus {
   h1{
       width: 70%;
   }
+  .swal-button{
+    right: 130px;
+}
 }
 
-@media (max-width: 320px) {
-    * {
-        color: red;
-      }
-
-}
