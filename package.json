@@ -1,0 +1,22 @@
+{
+  "name": "ibm-cic-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArieShapiro/CIC-Challenge-FilmsList.git"
+  },
+  "author": "Arie Shapiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArieShapiro/CIC-Challenge-FilmsList/issues"
+  },
+  "homepage": "https://github.com/ArieShapiro/CIC-Challenge-FilmsList#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
