@@ -63,7 +63,6 @@ function onVideoSearch(ev) {
     var searchValue = document.querySelector('.search-box').value;
 
     loadFilteredFilmList(searchValue);
-
 }
 
 
@@ -78,4 +77,17 @@ function loadFilteredFilmList(value) {
         renderFilmList(searchValue);
     }).catch();
 
+}
+
+function onScrollToTop() {
+    ScrollToTop();
+}
+
+//Smooth scroll to the top
+function ScrollToTop(){
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScroll > 0) {
+         window.requestAnimationFrame(ScrollToTop);
+         window.scrollTo (0,currentScroll - (currentScroll/5));
+    }
 }

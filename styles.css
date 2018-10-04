@@ -31,7 +31,7 @@ html {
 body {
   text-align: center;
   font-family: Nunito;
-  background-color: #fafafa;
+  background-color: #ebe7e7;
 }
 
 .main-left,
@@ -54,6 +54,24 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.fa-angle-double-up {
+  border: 1px black;
+  height: 26px;
+  width: 26px;
+  padding: 12px 8px 2px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #5c5050;
+  color: white;
+  position: fixed;
+  bottom: 3%;
+  left: 70%;
+}
+
+.fa-angle-double-up:hover {
+    background-color: #1f1d1d;
 }
 
 main {
@@ -137,47 +155,7 @@ input:focus {
   outline: none;
 }
 
-.tooltip {
-  position: relative;
-}
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 396px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: 30px;
-  left: -7%;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-}
-
-.tooltiptext p {
-  text-align: left;
-  padding-left: 2%;
-}
-
-.tooltiptext b {
-  font-size: 1.5em;
-}
-
-.tooltip h6:hover {
-  cursor: pointer;
-}
 
 .fa-hand-point-up {
   position: relative;
@@ -236,21 +214,23 @@ input:focus {
   .main-right {
     display: none;
   }
-  .swal-button{
-      right: 160px;
+  .swal-button {
+    right: 160px;
+  }
+  .fa-angle-double-up{
+    border-radius: 20% 0% 0% 20%;
+    left: 88%;
   }
 }
 
 @media (max-width: 400px) {
-  
   .films-list li {
     width: 70%;
   }
-  h1{
-      width: 70%;
+  h1 {
+    width: 70%;
   }
-  .swal-button{
+  .swal-button {
     right: 130px;
+  }
 }
-}
-
